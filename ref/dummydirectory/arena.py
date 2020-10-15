@@ -45,7 +45,7 @@ def letsplay(players, ncards, printmode,score_stich, score_game,did_cheat):
     if printmode:
       printTurn(cheated,nturn,stich,history[nturn,:],playerorderCopy)
 
-  score = score_game(stiche)
+  score = score_game(stiche,did_cheat(history))
   if printmode:
     printResults(stiche, score)
 
@@ -60,7 +60,7 @@ def printTurn(cheated, nturn,stich,cards, playerorder):
   print(f"# Team 0 plays: {int(cards[0])}                      #")
   print(f"# Team 1 plays: {int(cards[1])}                      #")
   print(f"# Team 2 plays: {int(cards[2])}                      #")
-  print(f"# Team 4 plays: {int(cards[3])}                      #")
+  print(f"# Team 3 plays: {int(cards[3])}                      #")
   print( "# ------------------------------------ #")
   if(any(cheated)):
     print("# There are teams that try to cheat!   #")
@@ -109,12 +109,12 @@ def printTurn(cheated, nturn,stich,cards, playerorder):
 def printResults(stiche, score):
   print(f"\n############## GAME OVER ###############")
   print(f"# Final Score:                         #")
-  print(f"# Team 0 won {int(stiche[0])} times and gets {int(score[0])} points!#")
-  print(f"# Team 1 won {int(stiche[1])} times and gets {int(score[1])} points!#")
-  print(f"# Team 2 won {int(stiche[2])} times and gets {int(score[2])} points!#")
-  print(f"# Team 4 won {int(stiche[3])} times and gets {int(score[3])} points!#")
+  print(f"#Team 0 has {stiche[0]} stiche ==> {int(score[0])} points!   #")
+  print(f"#Team 1 has {stiche[1]} stiche ==> {int(score[1])} points!   #")
+  print(f"#Team 2 has {stiche[2]} stiche ==> {int(score[2])} points!   #")
+  print(f"#Team 3 has {stiche[3]} stiche ==> {int(score[3])} points!   #")
   print("########################################")
-  input(" \nPRESS ANY KEY TO EXIT !!!\n")
+  #input(" \nPRESS ANY KEY TO EXIT !!!\n")
 
  # print("\n\nThe game ended. Final score:")
  # for playerid, point in enumerate(stiche):
@@ -127,7 +127,7 @@ def printResults(stiche, score):
 
 def printIntro():
   print("#########################################")
-  print("#  ♥♠  _____    _     ___    __    ♦♣   #")
+  print("#  ♥♠  _____    _     ___   ___    ♦♣   #")
   print("#  ♠♦ /    |   / \\   |  |  |   \\   ♣♥   #")
   print("#  ♦♣ |       /___\\  |__   |   |   ♥♠   #")
   print("#  ♣♥ \\____| /     \\ |  \\  |__/    ♠♦   #")
@@ -138,7 +138,7 @@ def printIntro():
   print("#   |   \\|  ||  \___| |    |    ||     #")
   print("#                                      #")
   print("########################################")
-  print(" ")
+  print("\n")
   input(" PRESS ANY KEY TO START !!!")
 
   return 0

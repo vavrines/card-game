@@ -19,7 +19,7 @@ def score_stich(cards, cheated):
   winnerid = np.random.permutation(np.argwhere(cardscopy == np.max(cardscopy)))[0]
   return points, winnerid
 
-def score_game(cards):
+def score_game(cards, cheated):
   """Distributes the points after a full match."""
 
   winner = cards == np.max(cards)
@@ -27,10 +27,18 @@ def score_game(cards):
   result = np.zeros(len(winner))
   alreadyWon = np.zeros(len(winner))
 
+  # filter out cheater
+  for i in range(0,len(winner)):
+      if(cheated[i] == True):
+        alreadyWon[i] = 1
+        cardsCpy[i] = -1
+
   # first places
-  result[winner == True] = 3
-  alreadyWon[winner == True] = 1
-  cardsCpy[winner == True] = -1
+  for i in range(0,len(winner)):
+    if(winner[i] == True and alreadyWon[i]== 0):
+      result[i] = 3
+      alreadyWon[i] = 1
+      cardsCpy[i] = -1
 
   # second places
   winner = cardsCpy == np.max(cardsCpy)
