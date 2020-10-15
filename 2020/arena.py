@@ -91,7 +91,7 @@ def printTurn(cheated, nturn,stich,cards, playerorder):
     print(f"# The opener is randomly chosen.       #")
 
   print( "########################################")
-  #input(" \nPRESS ANY KEY TO START THE NEXT ROUND !!!\n")
+  input(" \nPRESS ANY KEY TO START THE NEXT ROUND !!!\n")
 
 
   #print(f"\n\n\nIt's turn {nturn}. Up to now, the points are:")
@@ -131,13 +131,13 @@ def printIntro():
   print("#  ♠♦ /    |   / \\   |  |  |   \\   ♣♥   #")
   print("#  ♦♣ |       /___\\  |__   |   |   ♥♠   #")
   print("#  ♣♥ \\____| /     \\ |  \\  |__/    ♠♦   #")
-  print("#                                      #")
-  print("#    _   .   _   ___  _    _  ______   #")
-  print("#   | \\  |  ||  /     |    |    ||     #")
-  print("#   |  \\ |  ||  |  _  |----|    ||     #")
-  print("#   |   \\|  ||  \___| |    |    ||     #")
-  print("#                                      #")
-  print("########################################")
+  print("#                                       #")
+  print("#    _   .   _   ___  _    _  ______    #")
+  print("#   | \\  |  ||  /     |    |    ||      #")
+  print("#   |  \\ |  ||  |  _  |----|    ||      #")
+  print("#   |   \\|  ||  \___| |    |    ||      #")
+  print("#                                       #")
+  print("#########################################")
   print("\n")
   input(" PRESS ANY KEY TO START !!!")
 
